@@ -3,9 +3,14 @@ import React from "react";
 import Todos from "./Todos";
 
 describe("<Todos />", () => {
-    let wrapper;
+    let wrapper, props;
     beforeEach(() => {
-        wrapper = shallow(<Todos />);
+        props = {
+            todo: "",
+            key: "",
+            toggleTask: () => { }
+        };
+        wrapper = shallow(<Todos {...props} />);
     });
     it("renders without crashing", () => {
         expect(wrapper).toHaveLength(1);
